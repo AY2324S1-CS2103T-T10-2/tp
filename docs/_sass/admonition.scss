@@ -65,8 +65,9 @@ $admonitions:
         }
     }
     .admonition.#{$name} .admonition-title::before {
-        -webkit-mask: url("/assets/img/icons/#{$icon}") no-repeat 50% 50%;
-        mask: url("/assets/img/icons/#{$icon}") no-repeat 50% 50%;
+        // Adapted from: https://stackoverflow.com/a/39156436
+        -webkit-mask: url($baseurl + "/assets/img/icons/#{$icon}") no-repeat 50% 50%;
+        mask: url($baseurl + "/assets/img/icons/#{$icon}") no-repeat 50% 50%;
         @if $icon-color {
             background-color: #{$icon-color};
         }
